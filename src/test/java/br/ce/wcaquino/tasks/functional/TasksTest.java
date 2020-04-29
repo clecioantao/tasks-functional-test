@@ -1,5 +1,6 @@
 package br.ce.wcaquino.tasks.functional;
 
+import java.io.File;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
@@ -7,12 +8,23 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions options = new ChromeOptions();
+		//..
+		options.setBinary(new File("/usr/bin/google-chrome"));
+		//..
+		WebDriver driver = new ChromeDriver(options);
+		//WebDriver driver = new RemoteWebDriver(DesiredCapabilities.chrome());
+		//WebDriver driver = new ChromeDriver();
+		driver.get("http://www.google.com");
 		driver.navigate().to("http://192.168.0.33:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
