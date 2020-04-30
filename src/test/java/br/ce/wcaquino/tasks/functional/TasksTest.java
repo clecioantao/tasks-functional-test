@@ -7,12 +7,14 @@ import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeDriverService;
 
 public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 
-		WebDriver driver = new ChromeDriver();
+		ChromeDriverService service =  new ChromeDriverService.Builder().withWhitelistedIps(".*").withVerbose(true).build();
+		WebDriver driver = new ChromeDriver(service);
 		driver.navigate().to("http://192.168.0.33:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
