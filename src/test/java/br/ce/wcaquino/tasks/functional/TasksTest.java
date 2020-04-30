@@ -13,8 +13,9 @@ public class TasksTest {
 
 	public WebDriver acessarAplicacao() {
 
-		ChromeDriverService service =  new ChromeDriverService.Builder().withWhitelistedIps("192.168.0.9").withVerbose(true).build();
-		WebDriver driver = new ChromeDriver(service);
+		//ChromeDriverService service =  new ChromeDriverService.Builder().withWhitelistedIps("192.168.0.9").withVerbose(true).build();
+		//WebDriver driver = new ChromeDriver(service);
+		WebDriver driver = new ChromeDriver();
 		driver.navigate().to("http://192.168.0.33:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
