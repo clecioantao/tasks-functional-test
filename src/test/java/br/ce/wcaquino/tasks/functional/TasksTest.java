@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 public class TasksTest {
 
@@ -15,7 +16,9 @@ public class TasksTest {
 
 		//ChromeDriverService service =  new ChromeDriverService.Builder().withWhitelistedIps("192.168.0.9").withVerbose(true).build();
 		//WebDriver driver = new ChromeDriver(service);
-		WebDriver driver = new ChromeDriver();
+		ChromeOptions chromeOptions = new ChromeOptions();
+		chromeOptions.addArguments("--whitelisted-ips='192.168.0.9'");
+		WebDriver driver = new ChromeDriver(chromeOptions);
 		driver.navigate().to("http://192.168.0.33:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
