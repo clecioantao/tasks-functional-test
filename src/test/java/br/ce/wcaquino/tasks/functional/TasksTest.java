@@ -120,7 +120,7 @@ public class TasksTest {
 		}
 	}
 		
-/*
+
 	@Test
 	public void deveRemoverTarefaComSucesso() throws MalformedURLException {
 		WebDriver driver = acessarAplicacao();
@@ -136,11 +136,11 @@ public class TasksTest {
 			//remover a Tarefa
 			driver.findElement(By.xpath("//a[@class='btn btn-outline-danger btn-sm']")).click();
 			message = driver.findElement(By.id("message")).getText();
-			Assert.assertEquals("Success!", message);
+			Assert.assertEquals("Sucess!", message);
 		} finally {			
 			//fechar o browser
 			driver.quit();
 		}
 	}
-	*/
+
 }
