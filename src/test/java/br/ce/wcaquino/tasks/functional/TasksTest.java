@@ -41,7 +41,7 @@ public class TasksTest {
 			
 			//validar mensagem de sucesso
 			String message = driver.findElement(By.id("message")).getText();
-			Assert.assertEquals("Success!", message);
+			Assert.assertEquals("Sucess!", message);
 		} finally {			
 			//fechar o browser
 			driver.quit();
@@ -130,7 +130,7 @@ public class TasksTest {
 			driver.findElement(By.id("dueDate")).sendKeys("10/10/2030");
 			driver.findElement(By.id("saveButton")).click();
 			String message = driver.findElement(By.id("message")).getText();
-			Assert.assertEquals("Success!", message);
+			Assert.assertEquals("Sucess!", message);
 			
 			//remover a Tarefa
 			driver.findElement(By.xpath("//a[@class='btn btn-outline-danger btn-sm']")).click();
