@@ -54,6 +54,7 @@ public class TasksTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void naoDeveSalavarTarefaSemDescricao() throws MalformedURLException {
 		
@@ -83,6 +84,7 @@ public class TasksTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void naoDeveSalavarTarefaSemData() throws MalformedURLException {
 		
@@ -112,6 +114,7 @@ public class TasksTest {
 		
 	}
 	
+	@SuppressWarnings("deprecation")
 	@Test
 	public void naoDeveSalavarTarefaComDataPassada() throws MalformedURLException {
 		
